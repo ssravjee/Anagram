@@ -1,0 +1,23 @@
+Document (Input, Dictionary, Output)
+
+public void generate(Document d) {
+
+}
+
+public interface Generator {
+public void generate(Document in, Document dic, Document out);
+}
+
+public AnagramGenerator implements Generator {
+private Document in;
+private Document dic;
+private Document out;
+
+AnagramGenerator(Document in, Document dic, Document out) {
+	this.in = in;
+	this.dic = dic;
+	this.out = out;
+}
+public void generate(Document in, Document dic, Document out) {
+	readInput(in).useDic(dic).generateAnagrams().write(out);
+}
